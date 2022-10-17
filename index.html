@@ -3,40 +3,102 @@
         const cpuRandom = Math.floor(Math.random() * 3);
         let cpuRPS = "";
         if (cpuRandom == 0) {
-            cpuRPS = "Rock";
+            cpuRPS = "rock";
         }
         if (cpuRandom == 1) {
-            cpuRPS = "Paper";
+            cpuRPS = "paper";
         }
         if (cpuRandom == 2) {
-            cpuRPS = "Scissors";
+            cpuRPS = "scissors";
         }
         return cpuRPS;
     }
-    function GetplayerChoice () {
-        const cpuRandom = Math.floor(Math.random() * 3);
-        let cpuRPS = "";
-        if (cpuRandom == 0) {
-            cpuRPS = "Rock";
-        }
-        if (cpuRandom == 1) {
-            cpuRPS = "Paper";
-        }
-        if (cpuRandom == 2) {
-            cpuRPS = "Scissors";
-        }
-        return cpuRPS;
-    }
+// function getPlayerChoice () {
+//     const cpuRandom = Math.floor(Math.random() * 3);
+//     let cpuRPS = "";
+//     if (cpuRandom == 0) {
+//         cpuRPS = "rock";
+//     }
+//     if (cpuRandom == 1) {
+//         cpuRPS = "paper";
+//     }
+//     if (cpuRandom == 2) {
+//         cpuRPS = "scissors";
+//     }
+//     return cpuRPS;
+// }
 
     function playRound (playerSelection, computerSelection) {
-        
+        const player = playerSelection.toLowerCase();
+    let result  = "";
+
+        if (player == "rock" && computerSelection == "rock") {
+            result = "Rock Draw!";
+        }
+         if (player == "paper" && computerSelection == "paper") {
+            result = "Paper Draw!";
+        }
+        if (player == "scissors" && computerSelection == "scissors") {
+            result = "Scissors Draw!";
+        }
+
+        if (player == "rock" && computerSelection == "paper") {
+            result = "You Lost!";
+        }
+        if (player == "rock" && computerSelection == "scissors") {
+            result =  "You Won!";
+        }
+        if (player == "paper" && computerSelection == "rock") {
+            result =  "You Won!";
+        }
+        if (player == "paper" && computerSelection == "scissors") {
+            result =  "You Lost!";
+        }
+        if (player == "scissors" && computerSelection == "rock") {
+            result = "You Lost!";
+        }
+        if (player == "scissors" && computerSelection == "paper") {
+            result = "You Won!";
+        }
+        return result;
 
 
     }
-    const playerSelection = "rock";
+
+    function game (game) {
+        const rounds = 5;
+        const round = game;
+        let roundEnd = false;
+
+        let p1 = 0; // player 1 wins
+        let p2 = 0; // player 2 wins
+        let draw = 0; // draw
+
+        if (round == "You Won!") {
+            p1++;
+        }
+        if (round == "You Lost!") {
+            p2++;
+        }
+        if (round ==  "Rock Draw!" || round ==  "Paper Draw!" || round ==  "Scissors Draw!") {
+            draw++;
+        }
+
+
+        for (let i = 0; i < rounds; i++) {
+            console.log(game)
+ 
+        }
+        console.log(p1);
+        console.log(p2);
+        console.log(draw);
+        
+    }
+
+    const playerSelection = prompt();
+    console.log(playerSelection);
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+game(playRound(playerSelection, computerSelection));
 
-    console.log(getComputerChoice());
-    console.log(GetplayerChoice());
 </script>
