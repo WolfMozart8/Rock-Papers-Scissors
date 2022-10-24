@@ -1,17 +1,25 @@
 /* Globals */
-* {
+/* * {
     /* border: 1px solid red; */
+/* } */
+#fff {
+    background-color: white;
+    width: 100%;
+    height: 480px;
+    position: absolute;
+    left: 0;
+    font-size: 150px;
+    color: crimson;
 }
-
 body {
     text-align: center;
 }
 /* Score */
-.score-points {
+.score-points, #final {
     display: flex;
     justify-content: space-between;
-    width: 300px;
-    margin: 0 auto;
+    width: 610px;
+    margin: 30px auto;
 }
 /* Body */
 h1 {
@@ -25,4 +33,19 @@ h2 {
     width: 200px;
     height: 200px;
     font-size: 44px;
+}
+#final {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+   
+}
+#result {
+    font-size: 34px;
+    color: gold;
+}
+#choiceP1,
+#choiceCPU {
+   width: 33.3%;
 }
