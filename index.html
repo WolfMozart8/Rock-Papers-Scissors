@@ -1,129 +1,30 @@
-<script>
-// create two randoms? rock paper scicsors
-function getComputerChoice () {
-        const cpuRandom = Math.floor(Math.random() * 3);
-        let cpuRPS = "";
-        if (cpuRandom == 0) {
-            cpuRPS = "rock";
-        }
-        if (cpuRandom == 1) {
-            cpuRPS = "paper";
-        }
-        if (cpuRandom == 2) {
-            cpuRPS = "scissors";
-        }
-        return cpuRPS;
-    }
-function getPlayerChoice () { //random for player 1
-    const cpuRandom = Math.floor(Math.random() * 3);
-    let cpuRPS = "";
-    if (cpuRandom == 0) {
-        cpuRPS = "rock";
-    }
-    if (cpuRandom == 1) {
-        cpuRPS = "paper";
-    }
-    if (cpuRandom == 2) {
-        cpuRPS = "scissors";
-    }
-    return cpuRPS;
-}
-
-// Rounds function
-function playRound (playerSelection, computerSelection) {
-
-        const player = playerSelection.toLowerCase();
-        let result  = "";
-
-        if (player == "rock" && computerSelection == "rock") {
-            result = "Rock Draw!";
-        }
-         if (player == "paper" && computerSelection == "paper") {
-            result = "Paper Draw!";
-        }
-        if (player == "scissors" && computerSelection == "scissors") {
-            result = "Scissors Draw!";
-        }
-
-        if (player == "rock" && computerSelection == "paper") {
-            result = "You Lost!";
-        }
-        if (player == "rock" && computerSelection == "scissors") {
-            result =  "You Won!";
-        }
-        if (player == "paper" && computerSelection == "rock") {
-            result =  "You Won!";
-        }
-        if (player == "paper" && computerSelection == "scissors") {
-            result =  "You Lost!";
-        }
-        if (player == "scissors" && computerSelection == "rock") {
-            result = "You Lost!";
-        }
-        if (player == "scissors" && computerSelection == "paper") {
-            result = "You Won!";
-        }
-        return result;
-
-
-    }
-
-    // Run the game!
-function game () {
-        let rounds = 0;
-        let p1 = 0; // player 1 wins
-        let p2 = 0; // player 2 wins
-        let draw = 0; // draw
-
-        for (let i = 0; i < 5; i++){    // 1 i = 1 round
-            let playerSelection = prompt("Choose: Rock, Paper or Scissors");
-            let computerSelection = getComputerChoice();
-
-            const newFunc = playRound(playerSelection, computerSelection);  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock, Paper and Scissors</title>
+</head>
+<body>
+    <h1>Rock, Paper and Scissors!</h1>
+    <main>
+        <div class="score">
+            <h2>Score</h2>
+            <div class="score-points">
+                <p>Player : 0</p>
+                <p>cpu : 0</p>
+            </div>
             
-            if (newFunc == "You Won!") {
-            p1++;
-            rounds++;
-            console.log("You Won!");
-            
-            
-        }
-          else if (newFunc == "You Lost!") {
-            p2++;
-            rounds++;
-            console.log("You Lost!");
-
-        }
-           else if (newFunc ==  "Rock Draw!" || newFunc ==  "Paper Draw!" || newFunc ==  "Scissors Draw!") {
-            draw++;
-            rounds++;
-            console.log("Draw!");
-        }            
-        else {
-            console.log("Please, choose a real answer");
-            i--;    // Round will not increase if you dont use rock, paper or scissors
-        }
-           
-            console.log(newFunc);
-            
-        }
-      
-            console.log(p1);
-            console.log(p2);
-            console.log(draw);
-        console.log(rounds);
-
-        if (p1 > p2) {
-            console.log("You Win");
-        } 
-        else if (p1 < p2) {
-            console.log("You Lose");
-        }
-        else if (p1 == p2) {
-            console.log("No winners");
-        }
-    }
-
-    game();
-
-</script>
+        </div>
+        <div class="player">
+            <button id="rock" class="btn">Rock</button>
+            <button id="paper" class="btn">Paper</button>
+            <button id="scissors" class="btn">Scissors</button>
+        </div>
+        <div id="hh"></div>
+    </main>
+<script src="./script.js"></script>
+</body>
+</html>

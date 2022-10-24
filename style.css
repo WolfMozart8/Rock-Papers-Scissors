@@ -1,0 +1,28 @@
+/* Globals */
+* {
+    /* border: 1px solid red; */
+}
+
+body {
+    text-align: center;
+}
+/* Score */
+.score-points {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+}
+/* Body */
+h1 {
+    margin: 120px 170px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h2 {
+    text-align: center;
+}
+.btn {
+    width: 200px;
+    height: 200px;
+    font-size: 44px;
+}
